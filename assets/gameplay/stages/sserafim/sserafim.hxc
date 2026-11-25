@@ -106,6 +106,8 @@ class SserafimStage extends Stage
         results.push(NewPaths.sound('gameplay/stages/sserafim/sounds/door-kick-2'));
         results.push(NewPaths.sound('gameplay/stages/sserafim/sounds/cutscene/end-1'));
         results.push(NewPaths.sound('gameplay/stages/sserafim/sounds/cutscene/end-2'));
+
+      case 'MUSIC': // we want to strean cutscene audio too
         results.push(NewPaths.sound('gameplay/stages/sserafim/sounds/cutscene/start-cutscene'));
       default:
         // nothing
@@ -375,7 +377,7 @@ class SserafimStage extends Stage
     {
       // play second kick anim + reset her idle back to normal
       yunjin.playAnimation('kick2', true, false);
-      FunkinSound.playOnce(Paths.sound('gameplay/stages/sserafim/sounds/door-kick-2'), 1.0);
+      FunkinSound.playSoundOnce(NewPaths.sound('gameplay/stages/sserafim/sounds/door-kick-2'), {volume: 1.0});
       yunjin.danceEvery = 1;
 
       HapticUtil.vibrate(0, 0.2, 0.8, 0.25);
@@ -413,7 +415,7 @@ class SserafimStage extends Stage
     {
       // play first kick anim
       yunjin.playAnimation('kick1', true, false);
-      FunkinSound.playOnce(Paths.sound('gameplay/stages/sserafim/sounds/door-kick-1'), 1.0);
+      FunkinSound.playSoundOnce(NewPaths.sound('gameplay/stages/sserafim/sounds/door-kick-1'), {volume: 1.0});
 
       HapticUtil.vibrate(0, 0.2, 0.4, 0.1);
     }
@@ -878,7 +880,7 @@ class SserafimStage extends Stage
 
   function endStuff()
   {
-    FunkinSound.playOnce(Paths.sound('gameplay/stages/sserafim/sounds/cutscene/end-1'), 1.0);
+    FunkinSound.playSoundOnce(NewPaths.sound('gameplay/stages/sserafim/sounds/cutscene/end-1'), {volume: 1.0});
 
     new FlxTimer().start(0.05, function(tmr)
     {
@@ -969,7 +971,7 @@ class SserafimStage extends Stage
 
     new FlxTimer(cutsceneTimerManager).start(14.5 / 24, function(tmr)
     {
-      cutsceneSounds = FunkinSound.load(Paths.sound('gameplay/stages/sserafim/sounds/cutscene/start-cutscene'), 1.0, false, true, true);
+      cutsceneSounds = FunkinSound.loadSound(NewPaths.sound('gameplay/stages/sserafim/sounds/cutscene/start-cutscene'), {volume: 1.0, looped: false, autoDestroy: true, autoPlay: true, stream: true});
     });
 
     PlayState.instance.tweenCameraZoom(0.7, 3, true, FlxEase.circOut);
