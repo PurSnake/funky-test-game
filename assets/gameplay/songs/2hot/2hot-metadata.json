@@ -5,18 +5,20 @@
   "charter": "Jenny Crowe + Spazkid + ninjamuffin99",
   "offsets": {},
   "playData": {
+    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "pico-playable",
       "girlfriend": "nene",
       "opponent": "darnell",
+      "altInstrumentals": [],
       "opponentVocals": ["darnell"],
       "playerVocals": ["pico-playable"]
     },
     "stage": "phillyStreets",
     "noteStyle": "funkin",
     "stickerPack": "bonus-weekend1",
-    "ratings": { "easy": 5, "normal": 6, "hard": 8 },
+    "ratings": { "easy": 4, "normal": 6, "hard": 7 },
     "album": "volume3"
   },
   "generatedBy": "Friday Night Funkin' - v0.8.1",

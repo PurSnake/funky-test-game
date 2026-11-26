@@ -5,17 +5,19 @@
   "charter": "fabs + Spazkid",
   "offsets": {},
   "playData": {
+    "songVariations": [],
     "difficulties": ["easy", "normal", "hard"],
     "characters": {
       "player": "sserafim-sakura",
       "girlfriend": "sserafim-gf",
       "opponent": "sserafim-kazuha",
+      "altInstrumentals": [],
       "opponentVocals": [],
       "playerVocals": ["sserafim-sakura"]
     },
     "stage": "sserafim",
     "noteStyle": "funkin",
-    "ratings": { "easy": 2, "normal": 3, "hard": 5 },
+    "ratings": { "easy": 3, "normal": 3, "hard": 5 },
     "album": "spaghetti"
   },
   "generatedBy": "Friday Night Funkin' - v0.8.1",
